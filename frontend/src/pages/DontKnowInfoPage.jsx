@@ -82,11 +82,6 @@ function DontKnowInfoPage() {
             Review Details
           </button>
         </form>
-        <div style={{ width: "100%", display: "flex", justifyContent: "flex-end", marginTop: "16px" }}>
-          <button className="secondary-btn" type="button" onClick={() => navigate("/request-quote")}>
-            Request Quote
-          </button>
-        </div>
       </section>
     </main>
   );

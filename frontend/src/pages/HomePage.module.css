@@ -6,13 +6,16 @@
 
 
 .portalHeader {
-  height: 103px;
+  min-height: 103px;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
   background: #ffffff;
   border-bottom: 1px solid #9dc2d9;
-  padding: 0 118px;
+  padding: 12px clamp(16px, 8vw, 118px);
 }
 
 .brandTitle {
@@ -58,18 +61,22 @@
 }
 
 .heroSection {
-  min-height: 520px;
+  min-height: clamp(360px, 55vh, 520px);
   background: linear-gradient(180deg, #37aee2 0%, #274d90 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: 2;
+  padding: 24px clamp(16px, 4vw, 24px);
 }
 
 .heroInner {
   text-align: center;
   color: #ffffff;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .heroBrand {
@@ -86,15 +93,15 @@
 
 .heroInner h1 {
   margin: 10px 0 8px;
-  font-size: 68px;
+  font-size: clamp(36px, 8vw, 68px);
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.05;
 }
 
 .heroTag {
   margin: 0;
-  font-size: 52px;
-  line-height: 1;
+  font-size: clamp(22px, 5vw, 52px);
+  line-height: 1.1;
 }
 
 .loginButton {
@@ -220,7 +227,7 @@
 
 .systemsImage {
   width: 100%;
-  height: 520px;
+  height: clamp(240px, 45vw, 520px);
   object-fit: cover;
   display: block;
   position: relative;
@@ -232,7 +239,7 @@
 .servicesContent {
   max-width: 100%;
   margin: 0 auto;
-  padding: 70px 38px;
+  padding: clamp(32px, 6vw, 70px) clamp(16px, 4vw, 38px);
   color: rgba(31, 44, 71, 1);
   background-color: rgba(39, 77, 144, 1);
   background: linear-gradient(180deg, rgba(55, 174, 226, 1) 0%, rgba(39, 77, 144, 1) 100%);
@@ -240,13 +247,13 @@
 
 .servicesContent h2 {
   margin: 0;
-  font-size: 48px;
+  font-size: clamp(28px, 5vw, 48px);
   color: rgba(255, 255, 255, 1);
 }
 
 .smallTitle {
   margin: 8px 0 28px;
-  font-size: 27px;
+  font-size: clamp(18px, 3vw, 27px);
   color: #4d5f80;
 }
 
@@ -254,6 +261,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
+  width: 100%;
 }
 
 .serviceCard {
@@ -316,7 +324,7 @@
 
 .ctaImage {
   width: 100%;
-  height: 520px;
+  height: clamp(240px, 45vw, 520px);
   object-fit: cover;
   display: block;
   transition: transform 200ms linear;
@@ -328,8 +336,11 @@
   inset: 0;
   background: linear-gradient(90deg, rgba(10, 24, 48, 0.72), rgba(10, 24, 48, 0.18));
   color: #ffffff;
-  padding: 72px 44px;
+  padding: clamp(28px, 6vw, 72px) clamp(16px, 4vw, 44px);
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ctaOverlay h2,
@@ -340,7 +351,7 @@
 .ctaOverlay h2 {
   text-align: left;
   vertical-align: top;
-  font-size: 44px;
+  font-size: clamp(26px, 4.5vw, 44px);
 }
 
 .ctaLinks {
@@ -353,12 +364,12 @@
 .footerSection {
   background: rgba(39, 77, 144, 1);
   color: rgba(252, 252, 252, 1);
-  padding: 32px 40px 50px;
+  padding: clamp(24px, 4vw, 32px) clamp(16px, 4vw, 40px) clamp(32px, 5vw, 50px);
 }
 
 .footerSection p {
   margin: 0 0 8px;
-  font-size: 33px;
+  font-size: clamp(20px, 4vw, 33px);
 }
 
 .subscribeForm {
@@ -374,7 +385,8 @@
 }
 
 .subscribeForm input {
-  width: 360px;
+  width: min(360px, 100%);
+  flex: 1 1 220px;
   height: 40px;
   border: 1px solid #a7bfdc;
   border-radius: 6px;
@@ -392,13 +404,32 @@
   color: #315587;
 }
 
+@media (max-width: 1024px) {
+  .serviceCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .serviceCard h3 {
+    font-size: 26px;
+  }
+
+  .serviceCard p,
+  .serviceCard button {
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 900px) {
   .portalHeader {
-    padding: 0 18px;
+    padding: 12px 18px;
   }
 
   .brandTitle {
     font-size: 36px;
+  }
+
+  .brandLogo {
+    max-height: 56px;
   }
 
   .headerAction {
@@ -408,14 +439,6 @@
 
   .heroBrand {
     font-size: 33px;
-  }
-
-  .heroInner h1 {
-    font-size: 50px;
-  }
-
-  .heroTag {
-    font-size: 30px;
   }
 
   .quickBar {
@@ -431,7 +454,68 @@
     grid-template-columns: 1fr;
   }
 
-  .ctaImage {
-    height: 420px;
+  .ctaOverlay h2 {
+    text-align: left;
+  }
+
+  .subscribeForm label {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portalHeader {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .headerAction {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .heroBrand {
+    font-size: 28px;
+  }
+
+  .heroSubBrand {
+    font-size: 11px;
+  }
+
+  .loginButton {
+    width: min(164px, 90%);
+  }
+
+  .quickBar {
+    font-size: 16px;
+    min-height: 36px;
+  }
+
+  .serviceCard h3 {
+    font-size: 22px;
+  }
+
+  .serviceCard p {
+    font-size: 16px;
+  }
+
+  .serviceCard button,
+  .ctaLinks button {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .footerSection p {
+    font-size: 18px;
+  }
+
+  .subscribeForm {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subscribeForm input,
+  .subscribeForm button {
+    width: 100%;
   }
 }

@@ -12,16 +12,10 @@ function RequestQuotePage() {
 
   return (
     <main className="page-shell internal-page-shell">
-      <section
-        className="card"
-        style={{ maxWidth: "845px", height: "929px", minHeight: "929px", maxHeight: "929px" }}
-      >
+      <section className="card internal-form-card">
         <BackButton />
-        <h1 style={{ margin: "200px 0 30px", width: "845px" }}>Request Form</h1>
-        <div
-          className="action-grid"
-          style={{ height: "929px", width: "845px", justifyContent: "center", position: "relative" }}
-        >
+        <h1 className="internal-form-title">Request Form</h1>
+        <div className="action-grid internal-form-actions">
           {sealTypes.map((sealType) => (
             <button key={sealType} type="button" className="cta" onClick={() => navigate(getRouteForAction(sealType))}>
               {sealType}

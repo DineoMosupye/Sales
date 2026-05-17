@@ -3,30 +3,24 @@ import BackButton from "../components/BackButton";
 
 function SealKnowledge() {
   const navigate = useNavigate();
-  const sealKnowledgeButtonStyle = { width: "400px", maxWidth: "500px" };
 
   return (
-    <main className="page-shell internal-page-shell" style={{ position: "relative" }}>
-      <div style={{ position: "absolute", top: "20px", left: "20px" }}>
+    <main className="page-shell internal-page-shell seal-knowledge-shell">
+      <div className="internal-page-back">
         <BackButton />
       </div>
       <section className="card">
-        <div
-          className="split-actions"
-          style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "24px" }}
-        >
+        <div className="split-actions seal-knowledge-actions">
           <button
-            className="secondary-btn"
+            className="secondary-btn seal-knowledge-btn"
             type="button"
-            style={sealKnowledgeButtonStyle}
             onClick={() => navigate("/know-info")}
           >
             I Know Seal Information
           </button>
           <button
-            className="secondary-btn"
+            className="secondary-btn seal-knowledge-btn"
             type="button"
-            style={sealKnowledgeButtonStyle}
             onClick={() => navigate("/dont-know-info")}
           >
             I Don&apos;t Know Seal Information

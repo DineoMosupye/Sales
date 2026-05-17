@@ -14,16 +14,10 @@ function SealTypePage() {
 
   return (
     <main className="page-shell internal-page-shell">
-      <section
-        className="card"
-        style={{ maxWidth: "845px", height: "929px", minHeight: "929px", maxHeight: "929px" }}
-      >
+      <section className="card internal-form-card">
         <BackButton />
-        <h1 style={{ margin: "200px 0 60px", width: "845px" }}>Seal Type</h1>
-        <div
-          className="action-grid"
-          style={{ height: "929px", width: "845px", justifyContent: "center", position: "relative" }}
-        >
+        <h1 className="internal-form-title">Seal Type</h1>
+        <div className="action-grid internal-form-actions">
           {sealTypes.map((sealType) => (
             <button
               key={sealType}
