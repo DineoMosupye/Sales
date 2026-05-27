@@ -60,6 +60,6 @@ Frontend runs on `http://localhost:5173`.
 ## Notes
 
 - Quote requests dynamically route to selected admin/engineer email.
-- Technician requests route to `Shane.McKenzie@eagleburgmann.com`.
+- Technician requests route to "Technichian email"
 - Follow Up action resends the request email.
 - Mark Complete updates request status in MongoDB.
